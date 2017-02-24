@@ -1,5 +1,5 @@
 ---
-bg: "owl.jpg"
+bg: "owl1.jpg"
 layout: page
 title: "个人简介"
 crawlertitle: "QGUOFENG BLOG"
