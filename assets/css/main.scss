@@ -1,13 +1,18 @@
----
-sitemap: false
----
+// Tools
+@import "0-tools/animate.css";
+@import "0-tools/normalize";
+@import "0-tools/fonts";
 
-@import "variables";
-@import "reset";
-@import "base";
-@import "site";
-@import "utilities";
-@import "syntax";
-@import "vendor/fonts";
-@import "vendor/font-awesome/font-awesome";
-@import "vendor/magnific-popup/magnific-popup";
+// Base
+@import "1-base/base.sass";
+
+// Modules
+@import "2-modules/nav.sass";
+
+// Sections
+@import "3-sections/footer.sass";
+
+// Layouts
+@import "4-layouts/categories.sass";
+@import "4-layouts/home.sass";
+@import "4-layouts/post.sass";
