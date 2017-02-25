@@ -1,57 +1,106 @@
-// dl-menu options
-$(function() {
-  $( '#dl-menu' ).dlmenu({
-    animationClasses : { classin : 'dl-animate-in', classout : 'dl-animate-out' }
-  });
-});
-// Need this to show animation when go back in browser
-window.onunload = function() {};
+/*
+* Zoom Images, Get Date and Shadow
+* ========================================================================== */
 
-// Add lightbox class to all image links
-$("a[href$='.jpg'],a[href$='.jpeg'],a[href$='.JPG'],a[href$='.png'],a[href$='.gif']").addClass("image-popup");
+(function() {
+  /* variables */
+  var shadow = document.getElementById('shadow');
+  var images = document.querySelectorAll('a img');
+  var imageHeight = window.innerHeight - 20;
 
-// FitVids options
-$(function() {
-  $(".content").fitVids();
-});
+  /* events */
+  shadow.addEventListener('click', resetShadow, false);
+  window.addEventListener('keydown', resetStyles, false);
+  window.addEventListener('resize', refreshImageSizes, false);
 
-// All others
-$(document).ready(function() {
-    // zoom in/zoom out animations
-    if ($(".container").hasClass('fadeOut')) {
-        $(".container").removeClass("fadeOut").addClass("fadeIn");
+  /* functions */
+  setDate();
+  toggleImages();
+
+
+  function setDate() {
+    var currentYear = document.querySelector('.full-year');
+    if (currentYear) {
+      currentYear.innerHTML = new Date().getFullYear();
     }
-    if ($(".wrapper").hasClass('fadeOut')) {
-        $(".wrapper").removeClass("fadeOut").addClass("fadeIn");
+  }
+
+  function refreshImageSizes() {
+    // select all images
+    [].forEach.call(images, function(img) {
+      // if image zoomed
+      if (img.classList.contains('img-popup')) {
+        img.style.maxHeight = imageHeight + 'px';
+        img.style.marginLeft = '-' + (img.offsetWidth / 2) + 'px';
+        img.style.marginTop = '-' + (img.offsetHeight / 2) + 'px';
+      }
+    });
+  }
+
+  function resetShadow() {
+    shadow.style.display = 'none';
+    resetAllImages();
+  }
+
+  function resetStyles(event) {
+    if (event.keyCode == 27) {
+      event.preventDefault();
+      shadow.style.display = 'none';
+      resetAllImages();
     }
-    $(".zoombtn").click(function() {
-        $(".container").removeClass("fadeIn").addClass("fadeOut");
-        $(".wrapper").removeClass("fadeIn").addClass("fadeOut");
+  }
+
+  function resetAllImages() {
+    [].forEach.call(images, function(img) {
+      img.classList.remove('img-popup');
+      img.style.cursor = 'zoom-in';
+      img.style.marginLeft = 'auto';
+      img.style.marginTop = 'auto';
     });
-    // go up button
-    $.goup({
-        trigger: 500,
-        bottomOffset: 10,
-        locationOffset: 20,
-        containerRadius: 0,
-        containerColor: '#fff',
-        arrowColor: '#000',
-        goupSpeed: 'normal'
+  }
+
+  function toggleImages() {
+    [].forEach.call(images, function(img) {
+      img.addEventListener('click', function(event) {
+        event.preventDefault();
+        img.classList.toggle('img-popup');
+        if (img.classList.contains('img-popup')) {
+          img.style.cursor = 'zoom-out';
+          img.style.maxHeight = imageHeight + 'px';
+          img.style.marginLeft = '-' + (img.offsetWidth / 2) + 'px';
+          img.style.marginTop = '-' + (img.offsetHeight / 2) + 'px';
+          shadow.style.display = 'block';
+        } else {
+          img.style.cursor = 'zoom-in';
+          img.style.maxHeight = '100%';
+          img.style.marginLeft = 'auto';
+          img.style.marginTop = 'auto';
+          shadow.style.display = 'none';
+        }
+      });
     });
-	$('.image-popup').magnificPopup({
-    type: 'image',
-    tLoading: 'Loading image #%curr%...',
-    gallery: {
-      enabled: true,
-      navigateByImgClick: true,
-      preload: [0,1] // Will preload 0 - before current, and 1 after the current image
-    },
-    image: {
-      tError: '<a href="%url%">Image #%curr%</a> could not be loaded.',
-    },
-    removalDelay: 300, // Delay in milliseconds before popup is removed
-    // Class that is added to body when popup is open. 
-    // make it unique to apply your CSS animations just to this exact popup
-    mainClass: 'mfp-fade'
-  });
-});
+  }
+})();
+
+
+/*
+* Aside Resize
+* ========================================================================== */
+
+(function() {
+  var aside = document.querySelector('.sidebar');
+  var mainContainer = document.querySelectorAll('.content-wrapper');
+  var switcher = document.getElementById('switcher');
+
+  switcher.addEventListener('click', slide, false);
+
+
+  function slide() {
+    aside.classList.add('transition-divs');
+    aside.classList.toggle('aside-left');
+    [].forEach.call(mainContainer, function(c) {
+      c.classList.add('transition-divs');
+      c.classList.toggle('centering');
+    });
+  }
+})();
