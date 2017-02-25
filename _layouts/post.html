@@ -1,27 +1,37 @@
 ---
 layout: default
-title: Home
 ---
+<article class="post">
 
-<div class='xs-12 topBar hidden'>
-  <p>{{ page.title }}</p>
-</div>
+  <h1 class="post-title">{{ page.title }}</h1>
 
-<div class="xs-12 imgBack textCenter vertCenter banner" style='background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1) ), url({{ site.url }}/assets/img/{{ page.thumbnail }})'>
-  <div>
-    <a class='caps post-title' href='{{ post.url }}'>{{ page.title }}</a>
-    <p class='meta'>{{ page.date | date_to_long_string }} / by {{ page.author }}</p>
-  </div>
-</div>
+  <p class="post-meta">
+    <time datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date: "%d-%m-%Y" }}</time>
 
-<div class='divider xs-12 topBarTrigger'></div>
-
-<div class='post-wrap'>
-  <h1>{{ page.title }}</h1>
-  <p class='meta'>
-    {{ page.author }} // {{ page.date | date_to_long_string }}
+    {% if page.author %}
+      &nbsp;/&nbsp;
+      <span>{{ page.author }}</span>
+    {% endif %}
   </p>
 
-  {{ content }}
+  <div class="post-content">
 
-</div>
+    {{ content }}
+
+    {% if page.next.url %}
+      <a class="link-to-post" href="{{ page.next.url }}">
+        <span class="link-to-post__next">&#10535; &nbsp;Next post</span>
+        <span class="link-to-post__title">{{ page.next.title }}</span>
+      </a>
+    {% endif %}
+
+    {% if page.previous.url %}
+      <a class="link-to-post" href="{{ page.previous.url }}">
+        <span class="link-to-post__prev">&#10535; &nbsp;Previous post</span>
+        <span class="link-to-post__title">{{ page.previous.title }}</span>
+      </a>
+    {% endif %}
+
+  </div>
+
+</article>
