@@ -1,37 +1,40 @@
 ---
-layout: default
+layout: page
 ---
-<article class="post">
 
-  <h1 class="post-title">{{ page.title }}</h1>
+<div class="post-content">
+    <div class="title"><h1>{{ page.title }}</h1></div>
+    <p class="post-date">{{ page.date | date: "%b %-d, %Y" }}</p>
+                    
+     {{ content }}
+                    
+    <ul class="pagination">
+        {% if page.previous.url %}
+        <li class="previous">
+            <a href="{{ site.baseurl }}{{ page.previous.url }}">Previous</a>
+        </li>
+        {% endif %}
+        {% if page.next.url %}
+         <li class="next">
+            <a href="{{ site.baseurl }}{{ page.next.url }}">Next</a>
+        </li>
+        {% endif %}
+    </ul>
+</div>
 
-  <p class="post-meta">
-    <time datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date: "%d-%m-%Y" }}</time>
+            
 
-    {% if page.author %}
-      &nbsp;/&nbsp;
-      <span>{{ page.author }}</span>
-    {% endif %}
-  </p>
+<div class="catalog-menu">
+    <h3>目&nbsp;&nbsp;录</h3>
+    <div class="catalog-menu-content"></div>
+</div>
 
-  <div class="post-content">
 
-    {{ content }}
+<div class="comment">
+    <span>Comments</span>
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="{{ page.id }}" data-title="{{ page.title }}" data-url="limingyang2012.github.io{{ page.url }}"></div>
+    <!-- 多说评论框 end -->
+</div>
 
-    {% if page.next.url %}
-      <a class="link-to-post" href="{{ page.next.url }}">
-        <span class="link-to-post__next">&#10535; &nbsp;Next post</span>
-        <span class="link-to-post__title">{{ page.next.title }}</span>
-      </a>
-    {% endif %}
 
-    {% if page.previous.url %}
-      <a class="link-to-post" href="{{ page.previous.url }}">
-        <span class="link-to-post__prev">&#10535; &nbsp;Previous post</span>
-        <span class="link-to-post__title">{{ page.previous.title }}</span>
-      </a>
-    {% endif %}
-
-  </div>
-
-</article>
