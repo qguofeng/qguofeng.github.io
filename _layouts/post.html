@@ -1,37 +1,65 @@
----
-layout: default
----
-<article class="post">
 
-  <h1 class="post-title">{{ page.title }}</h1>
+<!-- Post Layout Start -->
 
-  <p class="post-meta">
-    <time datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date: "%d-%m-%Y" }}</time>
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
 
-    {% if page.author %}
-      &nbsp;/&nbsp;
-      <span>{{ page.author }}</span>
-    {% endif %}
-  </p>
+  {% include head.html %}
 
-  <div class="post-content">
+  <body>
 
-    {{ content }}
+    {% include navigation.html %}
 
-    {% if page.next.url %}
-      <a class="link-to-post" href="{{ page.next.url }}">
-        <span class="link-to-post__next">&#10535; &nbsp;Next post</span>
-        <span class="link-to-post__title">{{ page.next.title }}</span>
-      </a>
-    {% endif %}
+    <section id="post" class="container content-section text-center">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
 
-    {% if page.previous.url %}
-      <a class="link-to-post" href="{{ page.previous.url }}">
-        <span class="link-to-post__prev">&#10535; &nbsp;Previous post</span>
-        <span class="link-to-post__title">{{ page.previous.title }}</span>
-      </a>
-    {% endif %}
+          {% include swipe-instructions.html %}
 
-  </div>
+          <h1><strong>{{ page.title }}</strong></h1>
+          <h4>
+            <strong>{{ page.date | date_to_string }}</strong>
+            <small>
+              . category:
+              <a class="category" href="{{site.baseurl}}/categories/{{page.category | downcase}}.html">
+                {{ page.category }}
+              </a>.
+              <a href="{{site.baseurl}}{{page.url }}#disqus_thread">Comments</a>
+              <br />
+              {% for tag in page.tags %}
+                <a class="tag" href="{{site.baseurl}}/tags/{{tag}}.html">#{{ tag }}</a>
+              {% endfor %}
+            </small>
+          </h4>
 
-</article>
+          {{ page.content | markdownify }}
+
+          {% include share.html %}
+
+          {% if jekyll.environment == "production" %}
+            {% include comments.html %}
+          {% endif %}
+
+
+          <hr />
+
+          {% if site.author_blurb %}
+          <div class="author row">
+            <img class="col-xs-4 col-sm-3 col-md-2" src="{{site.baseurl}}{{site.author_blurb_image}}" alt="Me" />
+            <p class="col-xs-8 col-sm-9 col-md-10">
+              {{ site.author_blurb }}
+            </p>
+          </div>
+          {% endif%}
+        </div>
+      </div>
+    </section>
+
+    {% include footer.html %}
+
+    {% include js.html %}
+
+  </body>
+</html>
+
+<!-- Post Layout End -->

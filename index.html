@@ -1,14 +1,9 @@
 ---
-bg: "rails.jpg"
-layout: default
-crawlertitle: "QGUOFENG"
-title: "QGUOFENG"
-summary: "NOTE"
+layout: index
+section-type: index
+sitemap:
+  priority: 1.0
 ---
-
-{% for post in site.posts limit: 5 %}
-  <article class="index-page">
-    <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-    {{ post.excerpt }}
-  </article>
-{% endfor %}
+<!--
+If you want to have a static message in your intro layout, disable the dynamic-typing in the _config.yml and write here your text
+-->
