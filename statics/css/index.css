@@ -128,8 +128,8 @@ background-image:url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_1
 @media only screen and (max-width: 1024px) { .cate-posts { width: 100%; } }
 @media only screen and (max-width: 768px) { .cate-posts { margin: 0px auto; } }
 
-.posts li { list-style: none; margin: 0 2em 20px; display: block; background-color: rgba(7, 139, 69, 0.6); padding: 4px 40px; border-radius: 6px; -webkit-transition: all 0.3s linear; -moz-transition: all 0.3s linear; -ms-transition: all 0.3s linear; -o-transition: all 0.3s linear; transition: all 0.3s linear; }
-.posts li:hover { padding-left: 30px; border-left: 15px solid #CE2323; -webkit-transition: all 0.3s linear; -moz-transition: all 0.3s linear; -ms-transition: all 0.3s linear; -o-transition: all 0.3s linear; transition: all 0.3s linear; }
+.posts li { list-style: none; margin: 0 2em 20px; display: block; padding: 4px 40px; border-radius: 6px; -webkit-transition: all 0.3s linear; -moz-transition: all 0.3s linear; -ms-transition: all 0.3s linear; -o-transition: all 0.3s linear; transition: all 0.3s linear; }
+.posts li:hover { padding-left: 30px; border-left: 15px solid #CE2323; -webkit-transition: all 0.3s linear; -moz-transition: all 0.3s linear; -ms-transition: all 0.3s linear; -o-transition: all 0.3s linear; transition: all 0.3s linear; background-color: lightgrey;}
 @media only screen and (max-width: 375px) { .posts li h4 { font-size: 16px; } }
 @media only screen and (max-width: 375px) { .posts li p { font-size: 14px; } }
 @media only screen and (max-width: 375px) { .posts li span { font-size: 14px; } }
