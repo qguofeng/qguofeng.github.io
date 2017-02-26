@@ -1,7 +1,7 @@
 # Site settings
 title: 'QGUOFENG'  # Your Title
 tagline: ''  # A brief tagline for your site
-sidebar_image: /images/cover.jpg
+sidebar_image: 
 
 encoding: UTF-8
 markdown: kramdown
@@ -15,9 +15,9 @@ baseurl: ""
 
 # Site settings
 name:           
-email:          
+email:          892713852@qq.com
 uri:            qguofeng.github.io
-github:         
+github:         http://github.com/qguofeng/qguofeng.github.io
 twitter:        
 facebook:       
 linkedin:       
