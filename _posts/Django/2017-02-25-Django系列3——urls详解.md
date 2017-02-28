@@ -10,7 +10,7 @@ categories: ['Python','Web','Django']
 欢迎指出错误一起学习
 欢迎大家转载，借鉴，如果标明出处不胜感激
 ```
-<!--more-->
+
 一、urls.py:URL分发器(路由配置文件)
 ```bash
 URL配置就像是Django所支撑网站的目录，它的本质是URL模式以及要为URL模式调用的视图函数之间的映射表。

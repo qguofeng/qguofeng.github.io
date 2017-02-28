@@ -10,7 +10,7 @@ categories: ['Python','Web','Django']
 欢迎指出错误一起学习
 欢迎大家转载，借鉴，如果标明出处不胜感激
 ```
-<!--more-->
+
 view.py主要的内容是视图函数(view function)他与URL一起配合使用。<br />
 用户通过浏览器访问地址来访问页面，而地址的相关信息在URL.py中配置好了，url配置将用户的请求url对应的view function 匹配，调用view function进行数据处理，然后选择对应的templates目录中的模板进行渲染展示，或将数据直接返回
 <br />

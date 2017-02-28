@@ -10,7 +10,7 @@ categories: ['Python','Web','Django']
 欢迎指出错误一起学习
 欢迎大家转载，借鉴，如果标明出处不胜感激
 ```
-<!--more-->
+
 Django默认支持的数据库为sqlit3<br />
 更换支持的数据库为Mysql数据库
 <br />
