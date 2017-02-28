@@ -6,7 +6,7 @@ html, body, h1, h2, h3, h4, h5, h6, div, dl, dt, dd, ul, ol, li, p { margin: 0; 
 
 header, footer, section, article, nav { display: block; }
 
-html, body, fieldset, img, iframe, abbr { border: 0; }
+html, body, fieldset, img, iframe, abbr { max-width: 100%;border: 0; }
 
 li { list-style: none; }
 
