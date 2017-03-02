@@ -1,59 +1,40 @@
-<!doctype html>
-<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
-<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
-<head>
-{% include head.html %}
-</head>
+---
+layout: page
+---
 
-<body id="post" {% if page.image.feature %}class="feature"{% endif %}>
-
-{% include browser-upgrade.html %}
-{% include navigation.html %}
-
-{% if page.image.feature %}
-<div class="entry-header">
-  {% if page.image.credit %}<div class="image-credit">Image source: {% if page.image.creditlink %}<a href="{{ page.image.creditlink }}">{% endif %}{{ page.image.credit }}{% if page.image.creditlink %}</a>{% endif %}</div><!-- /.image-credit -->{% endif %}
-  <div class="entry-image">
-    <img src="{{ site.url }}/images/{{ page.image.feature }}" alt="{{ page.title }}">
-  </div><!-- /.entry-image -->
-</div><!-- /.entry-header -->
-{% endif %}
-
-<div id="main" role="main">
-  <article class="hentry">
-    <header class="header-title">
-      <div class="header-title-wrap">
-        {% if page.link %}
-          <h1 class="entry-title"><i class="fa fa-bookmark permalink"></i> <a href="{{ page.link }}">{{ page.title }}</a></h1>
-        {% else %}
-          <h1 class="entry-title"><a href="{{ site.url }}{{ page.url }}" rel="bookmark" title="{{ page.title }}">{{ page.title }}</a></h1>
+<div class="post-content">
+    <div class="title"><h1>{{ page.title }}</h1></div>
+    <p class="post-date">{{ page.date | date: "%b %-d, %Y" }}</p>
+                    
+     {{ content }}
+                    
+    <ul class="pagination">
+        {% if page.previous.url %}
+        <li class="previous">
+            <a href="{{ site.baseurl }}{{ page.previous.url }}">上一页</a>
+        </li>
         {% endif %}
-        <h2><span class="entry-date date published"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time></span></h2>
-        {% if site.reading_time %}
-        <p class="entry-reading-time">
-          <i class="fa fa-clock-o"></i>
-          {% assign readtime = content | number_of_words | divided_by:site.words_per_minute %}
-          Reading time ~{% if readtime <= 1 %}1 minute{% else %}{{ readtime }} minutes{% endif %}
-        </p><!-- /.entry-reading-time -->
+        {% if page.next.url %}
+         <li class="next">
+            <a href="{{ site.baseurl }}{{ page.next.url }}">下一页</a>
+        </li>
         {% endif %}
-      </div><!-- /.header-title-wrap -->
-    </header>
-    <div class="entry-content">
-      {{ content }}
-    </div><!-- /.entry-content -->
-    {% if site.related_posts.size > 0 %}{% include read-more.html %}{% endif %}
-  </article>
-</div><!-- /#main -->
+    </ul>
+</div>
 
-<div class="footer-wrapper">
-  <footer role="contentinfo">
-    {% include footer.html %}
-  </footer>
-</div><!-- /.footer-wrapper -->
+            
 
-{% include scripts.html %}	        
+<div class="catalog-menu">
+    <h3>目&nbsp;&nbsp;录</h3>
+    <div class="catalog-menu-content"></div>
+</div>
 
-</body>
-</html>
+
+<div class="comment">
+    <span>评论</span>
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="{{ page.id }}" data-title="{{ page.title }}" data-url="qguofeng.github.io{{ page.url }}"></div>
+    <!-- 多说评论框 end -->
+</div>
+
+
