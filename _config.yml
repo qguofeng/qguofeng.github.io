@@ -1,33 +1,73 @@
-
 # Site settings
-title: Project-Gaia
-email:
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://github.com/qguofeng/qguofeng.github.io" # the base hostname & protocol for your site
+title: PHOTORAMA
+email: ""
+description: "Photo Journal"
+url: "https://sunbliss.github.io"
+baseurl: "/photorama"
+facebook_username: ""
+twitter_username: ""
+instagram_username: ""
+github_username:  ""
+deviantart_username: ""
+flickr_username: ""
+discus_shortname: ""
+share: true
 
-# User setting
+# Owner/author information
 owner:
-email:
-facebook_username:
-twitter_username:
-github_username:
-address:
-  - line:
-  - line:
-  # Feel free to add more lines here 
-telephone:
-copyright:
+  name:   photorama
+  avatar: avatar.png
+  favicon: favicon.ico
+  info: photography website template
 
-# API settings
-google_api_key:
+# Settings for comments helper
+# Set 'provider' to the comment provider you want to use. (i.e.  Disqus, Intense Debate, livefyre, or Facebook Comments)
+# Set 'provider' to false to turn commenting off globally.
+#Set 'provider: false' to disable comments globally.
+# Disable comments for individual pages/posts by specifying 'comments: false' in the page/post YAML Front Matter.
+#
+comments :
+  provider : disqus
+  disqus :
+    short_name : ""
+
+# Internal nav
+nav:
+  - GALLERY: "https://sunbliss.github.io/photorama/gallery/"  
+  - JOURNAL: "https://sunbliss.github.io/photorama/journal/"
+  - ABOUT: "https://sunbliss.github.io/photorama/about/"
+
+# All translation keys
+translations:
+ # 404.html
+  permalink: "/404.html"
+
+# Server
+destination:      	 ./_site
+port:             	 4000
+
 
 # Build settings
-gems: [jekyll-paginate]
-
 markdown: kramdown
-# toc_levels: 1..2
+highlighter: rouge
+permalink: pretty
+paginate: 5
+paginate_path: "/journal/page:num/"
+permalink: "/journal/:title/"
+categories_path: "/journal/category/"
+tags_path: "/journal/tag/"
+gems: 
+ - jekyll-paginate
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 
+# SiteMap
+sitemap:
+    file: "/sitemap.xml"
+    exclude:
+        - "/atom.xml"
+        - "/feed.xml"
+        - "/feed/index.xml"
+    include_posts:
+        - "/writing/"
+    change_frequency_name: "change_frequency"
+    priority_name: "priority"
