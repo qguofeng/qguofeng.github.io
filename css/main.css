@@ -387,6 +387,7 @@ img::-moz-selection {
   .content-wrapper {
     z-index: 800;
     width: 70%;
+    font-size: 14px;
     margin-left: 30%; }
 
   .content-wrapper__inner {
