@@ -5,13 +5,13 @@ description: Welcome
 # 头像里面的标题
 avatarTitle: QGUOFENG
 # 头像里面的描述
-avatarDesc: iOS / 机器学习
+avatarDesc: 
 url: "http://baixin.io"
 
 # Comment
 comment:
     # disqus: 
-    duoshuo:  
+    duoshuo: 6391023982891500290 
 
 # Social
 social:
