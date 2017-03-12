@@ -348,10 +348,9 @@ img::-moz-selection {
     border-left: 3px solid #458B74; 
     margin: 0;
     margin-right: 10px;
-    font-size: .9em;
-    background-color: #FFF;
+    font-size: 1.3em;
     text-indent: 10px;
-    color: #4F4F4F; 
+    color: white; 
   }
 
   .intro {
