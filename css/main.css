@@ -16,6 +16,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
   display: block; 
   color:white;
+  font-size: 18px;
 }
 
 body {
@@ -199,7 +200,6 @@ code {
 pre {
   margin-bottom: 1.3em;
   padding: 1em 2.5%;
-  background: #e8f2fb;
   border: 1px solid #c9e1f6;
   border-radius: 3px;
   font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
@@ -484,6 +484,7 @@ img::-moz-selection {
     display: block; }
   .post pre {
     width: 95%;
+    font-size: 19px;
     overflow: auto; }
   .post hr {
     display: block;
