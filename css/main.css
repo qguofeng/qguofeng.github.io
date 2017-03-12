@@ -134,6 +134,7 @@ h3 {
   box-shadow: 0px 5px 5px white;
   border-left: 6px solid white; 
   position:relative;
+  font-weight: inherit;
 }
 
 h4 {
