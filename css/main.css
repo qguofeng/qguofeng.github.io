@@ -120,7 +120,9 @@ h1 {
 h2 {
   font-size: 1.5em; 
   /*background:#B9D3EE;*/
-  /*text-align: center;*/
+  background-color:darkred;
+  text-align: center;
+  font-weight:initial;
 }
 
 h3 {
