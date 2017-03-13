@@ -25,7 +25,18 @@
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
   
   <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
-
+<!--动态背景 -->
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/easyBackground-min.js"></script>
+  <link rel="stylesheet" href="/css/styles.css" media="screen">
+<!--增加动态背景 -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('body').easyBackground({
+      wrapNeighbours: true
+      });
+    });
+  </script>
 <!-- 站点统计 -->
   <script 
   async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">

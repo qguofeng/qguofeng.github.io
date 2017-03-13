@@ -1,0 +1,35 @@
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+#content {
+    width: 960px;
+    background: #FFF;
+    background: rgba(255,255,255,.75);
+    padding: 20px;
+    margin: 50px auto;
+    border: 1px solid #666;
+    -webkit-box-shadow: 2px 2px 5px 1px rgba(0,0,0,.3);
+    box-shadow: 2px 2px 5px 1px rgba(0,0,0,.3);
+    border-radius: 5px;
+}
+@media (max-width:1000px) {
+    #content {
+	width: 800px;
+    }
+}
+@media (max-width:900px) {
+    #content {
+	width: 700px;
+    }
+}
+@media (max-width:770px) {
+    #content {
+	width: 500px;
+    }
+}
+
+#content iframe {
+    border: none;
+}
