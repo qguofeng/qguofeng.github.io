@@ -350,7 +350,7 @@ img::-moz-selection {
     border-left: 3px solid #458B74; 
     margin: 0;
     margin-right: 10px;
-    font-size: 1.3em;
+    /*font-size: 1.3em;*/
     text-indent: 10px;
     color: white; 
   }
@@ -911,7 +911,7 @@ img::-moz-selection {
 }
 .post-list__meta--tags-right {
   color: #8A97A1;
-  font-size: 0.7em;
+  font-size: 1.5em;
 }
 
 .post-list-icon-mate {
