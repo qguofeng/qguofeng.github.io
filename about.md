@@ -1,8 +1,8 @@
 ---
 layout: page
-title: 关于我 
+title: 个人简历 
 ---
-<div border="2">
+<!--<div border="2">
 <hr />
 <p>一个即将即将迈出学校大门的学生狗，我的专业是网络工程。</p>
 
@@ -23,7 +23,7 @@ python<br />python爬虫爬58同城二手市场的几十万数据<br />
 了解MySql数据库的简单操作,熟悉html,css,了解js</p>
 <p>正在学习javaweb后台开发..........</p>
 <hr />
-</div>
+</div>-->
 {% include comments.html %}
 
 
