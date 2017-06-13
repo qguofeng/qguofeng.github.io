@@ -5,11 +5,19 @@ date: 2017-06-01  13:00:00
 description: "javaee学习笔记"
 tag: SSH 
 ---
+[TOC]
+
 ### 商城系统路程图
 
 ![ssh](/assets/active_images/javaweb/ssh/ssh.png)
 
 ### 需求分析
+
+```
+该商城系统整体采用MVC模式的Struts2框架，数据源利用SpringIOC注入，dao层使用Spring的HibernateTemplate实现。模型层严格安装javaBean规范要求，用struts2控制流程，JSP纯标签页显示，运用SpringIOC的注入对各层的解耦，提高程序的可扩展性，易于维护。
+```
+
+
 
 #### 前台:用户模块
 
@@ -273,6 +281,20 @@ ssh：需要的主要的配置文件
 ### 前台功能实现
 
 #### 注册
+
+```
+主要完成的功能实现：
+	struts2的DispatchAction实现页面跳转
+	JSP页面显示（利用jsp标签和struts标签）
+	SpringIOC对包进行管理
+	dao使用Hibernate进行数据操作
+	用户注册页面js代码实现数据简单校验
+	用户注册页面使用AJAx技术实现后台用户名校验
+	用户注册页面使用validation配置文件进行后台校验
+	用户注册页面使用验证码进行简单校验，防止机器注入
+```
+
+
 
 ![ssh](/assets/active_images/javaweb/ssh/regist.png)
 
@@ -538,6 +560,17 @@ Jquery用户名异步校验
 
 #### 登录
 
+```
+主要完成的功能实现：
+	struts2的DispatchAction实现页面跳转
+	JSP页面显示（利用jsp标签和struts标签）
+	SpringIOC对包进行管理
+	dao使用Hibernate进行数据操作
+	后台进行用户校验，错误返回错误信息，成功跳转首页
+```
+
+
+
 ![ssh](/assets/active_images/javaweb/ssh/login.png)
 
 ```
@@ -563,23 +596,76 @@ Jquery用户名异步校验
 
 #### 主页面
 
+```
+主要完成的功能实现：
+	struts2的DispatchAction实现页面跳转
+	JSP页面显示（利用jsp标签和struts标签）
+	dao使用Hibernate进行数据操作
+	主页面：一级分类，二级分类的显示
+	主页面：新品，热销，推荐商品显示
+```
+
+
+
 ![ssh](/assets/active_images/javaweb/ssh/index1.png)
 
 ![ssh](/assets/active_images/javaweb/ssh/index2.png)
 
 #### 商品分类页
 
+```
+主要完成的功能实现：
+	struts2的DispatchAction实现页面跳转
+	JSP页面显示（利用jsp标签和struts标签）
+	SpringIOC对包进行管理
+	dao使用Hibernate进行数据操作
+	商品分类页显示一级分类，二级分类
+	商品分类页显示商品信息（根据分类显示）
+```
+
+
+
 ![ssh](/assets/active_images/javaweb/ssh/product.png)
 
 #### 商品详情页
 
+主要完成的功能实现：
+
+	struts2的DispatchAction实现页面跳转
+	JSP页面显示（利用jsp标签和struts标签）
+	SpringIOC对包进行管理
+	dao使用Hibernate进行数据操作
+	商品详细页显示商品的详细信息（根据商品id）
 ![ssh](/assets/active_images/javaweb/ssh/productDetail.png)
 
 #### 购物车
 
+```
+主要完成的功能实现：（用户存入session中，若不存在，跳转公共页面携带错误信息）
+	struts2的DispatchAction实现页面跳转
+	JSP页面显示（利用jsp标签和struts标签）
+	SpringIOC对包进行管理
+	dao使用Hibernate进行数据操作
+	购物车订单和订单项显示（根据用户显示）
+```
+
+
+
 ![ssh](/assets/active_images/javaweb/ssh/orders.png)
 
 #### 用户信息
+
+```
+主要完成的功能实现：（用户存入session中，若不存在，跳转公共页面携带错误信息）
+	struts2的DispatchAction实现页面跳转
+	JSP页面显示（利用jsp标签和struts标签）
+	SpringIOC对包进行管理
+	dao使用Hibernate进行数据操作
+	用户基本信息显示（根据用户id）
+	用户订单显示（各个转台订单数量显示）
+```
+
+
 
 ![ssh](/assets/active_images/javaweb/ssh/usercenter1.png)
 
@@ -589,35 +675,101 @@ Jquery用户名异步校验
 
 ### 后台页面
 
+```
+使用struts2中的拦截器interceptor，继承Interceptor的子类MethodFilterInterceptor实现方法doIntercept
+在配置文件中对后台所有页面进行登录拦截（除登录方法），实现简单的登录权限控制
+```
+
+
+
 #### 登录
+
+```
+主要完成的功能实现：
+	struts2的DispatchAction实现页面跳转
+	JSP页面显示（利用jsp标签和struts标签）
+	SpringIOC对包进行管理
+	dao使用Hibernate进行数据操作
+```
+
+
 
 ![ssh](/assets/active_images/javaweb/ssh/admin_adminLogin.png)
 
 #### 主页
 
+```
+主要完成的功能实现：（用户存入session中，若不存在，跳转公共页面携带错误信息）
+	struts2的DispatchAction实现页面跳转
+	JSP页面显示（利用jsp标签和struts标签）
+	SpringIOC对包进行管理
+	dao使用Hibernate进行数据操作
+	显示该系统注册人数，成交订单数量，商品数量，用户真实用户率(激活用户/注册用户)
+```
+
+
+
 ![ssh](/assets/active_images/javaweb/ssh/adminIndex.png)
 
 #### 商品列表管理
 
-![ssh](/assets/active_images/javaweb/ssh/adminProduct.png)
+```
+主要完成的功能实现：（用户存入session中，若不存在，跳转公共页面携带错误信息）
+	struts2的DispatchAction实现页面跳转
+	JSP页面显示（利用jsp标签和struts标签）
+	SpringIOC对包进行管理
+	dao使用Hibernate进行数据操作
+	商品的显示，修改，添加，上架下架，删除
+```
 
-#### 商品添加
+
+
+![ssh](/assets/active_images/javaweb/ssh/adminProduct.png)
 
 ![ssh](/assets/active_images/javaweb/ssh/adminProductAdd.png)
 
 #### 分类管理
 
+```
+主要完成的功能实现：（用户存入session中，若不存在，跳转公共页面携带错误信息）
+	struts2的DispatchAction实现页面跳转
+	JSP页面显示（利用jsp标签和struts标签）
+	SpringIOC对包进行管理
+	dao使用Hibernate进行数据操作
+	一级分类对应二级分类的增加，修改，删除
+	一级分类的曾删改查
+```
+
+
+
 ![ssh](/assets/active_images/javaweb/ssh/adminCategory.png)
 
 * 添加
 
-​	![ssh](/assets/active_images/javaweb/ssh/adminCategory1.png)				
+  ​![ssh](/assets/active_images/javaweb/ssh/adminCategory1.png)				
 
 #### 订单管理
 
+```
+主要完成的功能实现：（用户存入session中，若不存在，跳转公共页面携带错误信息）
+	struts2的DispatchAction实现页面跳转
+	JSP页面显示（利用jsp标签和struts标签）
+	SpringIOC对包进行管理
+	dao使用Hibernate进行数据操作
+	订单的显示
+	根据订单状态分为：
+		未付款订单
+		未发货订单
+		未收货订单
+		未出库订单
+		成交订单
+```
+
+
+
 * 订单列表
 
-![ssh](/assets/active_images/javaweb/ssh/adminOrder.png)	
+  ![ssh](/assets/active_images/javaweb/ssh/adminOrder.png)
 
 * 发货未出库的订单
 
@@ -629,6 +781,13 @@ Jquery用户名异步校验
 
 #### 会员管理
 
+主要完成的功能实现：（用户存入session中，若不存在，跳转公共页面携带错误信息）
+
+	struts2的DispatchAction实现页面跳转
+	JSP页面显示（利用jsp标签和struts标签）
+	SpringIOC对包进行管理
+	dao使用Hibernate进行数据操作
+	会员简单信息显示
 * 会员列表
 
 ![ssh](/assets/active_images/javaweb/ssh/adminUser.png)
