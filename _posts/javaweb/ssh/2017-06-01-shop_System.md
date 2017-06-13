@@ -633,5 +633,5 @@ Jquery用户名异步校验
 
 ![ssh](/assets/active_images/javaweb/ssh/adminUser.png)
 
-转载请注明：[邱国锋的博客](http://qiuguofeng.com) » [点击阅读原文](http://qiuguofeng.com/2017/06/商城系统/)
+转载请注明：[邱国锋的博客](http://qiuguofeng.com) » [点击阅读原文](http://qiuguofeng.com/2017/06/shop_System/)
 
