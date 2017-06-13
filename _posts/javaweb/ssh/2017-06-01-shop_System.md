@@ -14,7 +14,13 @@ tag: SSH
 ### 需求分析
 
 ```
-该商城系统整体采用MVC模式的Struts2框架，数据源利用SpringIOC注入，dao层使用Spring的HibernateTemplate实现。模型层严格安装javaBean规范要求，用struts2控制流程，JSP纯标签页显示，运用SpringIOC的注入对各层的解耦，提高程序的可扩展性，易于维护。
+该商城系统整体采用MVC模式的Struts2框架，
+数据源利用SpringIOC注入，
+dao层使用Spring的HibernateTemplate实现。
+模型层严格安装javaBean规范要求，
+用struts2控制流程，
+JSP纯标签页显示，
+运用SpringIOC的注入对各层的解耦，提高程序的可扩展性，易于维护。
 ```
 
 
@@ -676,7 +682,8 @@ Jquery用户名异步校验
 ### 后台页面
 
 ```
-使用struts2中的拦截器interceptor，继承Interceptor的子类MethodFilterInterceptor实现方法doIntercept
+使用struts2中的拦截器interceptor，
+继承Interceptor的子类MethodFilterInterceptor实现方法doIntercept
 在配置文件中对后台所有页面进行登录拦截（除登录方法），实现简单的登录权限控制
 ```
 
