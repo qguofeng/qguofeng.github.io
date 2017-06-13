@@ -699,8 +699,6 @@ Jquery用户名异步校验
 	dao使用Hibernate进行数据操作
 ```
 
-
-
 ![ssh](/assets/active_images/javaweb/ssh/admin_adminLogin.png)
 
 #### 主页
