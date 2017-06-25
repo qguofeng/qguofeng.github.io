@@ -2,12 +2,13 @@
 layout: page
 title: 个人简历 
 ---
-<div border="2">
-<hr />
 ![图片](/assets/active_images/myself/myself1.png)
 ![图片](/assets/active_images/myself/myself2.png)
 ![图片](/assets/active_images/myself/myself3.png)
 ![图片](/assets/active_images/myself/myself4.png)
+
+<div border="2">
+<hr />
 <p>个人技能：<br />
 python<br />python爬虫爬58同城二手市场的几十万数据<br />
 爬取并下载了<a href="http://www.tooopen.com/">素材公社</a>上的图片<a href="http://qiuguofeng.com/2017/01/爬虫系列二/">» [点击阅读原文]</a>
