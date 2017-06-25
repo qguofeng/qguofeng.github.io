@@ -2,6 +2,7 @@
 layout: page
 title: 个人简历 
 ---
+ssh商城<a href="http://qiuguofeng.com/2017/06/shop_System/">» [点击阅读原文]</a>
 ![图片](/assets/active_images/myself/myself1.png)
 ![图片](/assets/active_images/myself/myself2.png)
 ![图片](/assets/active_images/myself/myself3.png)
