@@ -4,11 +4,10 @@ title: 个人简历
 ---
 <div border="2">
 <hr />
-<p>姓名:<h1>邱国锋</h1></p>
-
-<p>对于这个专业来讲起初是抱有很大的热情。可能是由于对学校的教学方式和考试制度产生厌倦或者是恐惧，对于这个专业变得不冷不热。于是我给了自己一个要求，对于喜欢的课程自己加深学习，对于不喜欢的课程保证不挂科。</p>
-
-
+![图片](/assets/active_images/myself/myself1.jpg)
+![图片](/assets/active_images/myself/myself2.jpg)
+![图片](/assets/active_images/myself/myself3.jpg)
+![图片](/assets/active_images/myself/myself4.jpg)
 <p>个人技能：<br />
 python<br />python爬虫爬58同城二手市场的几十万数据<br />
 爬取并下载了<a href="http://www.tooopen.com/">素材公社</a>上的图片<a href="http://qiuguofeng.com/2017/01/爬虫系列二/">» [点击阅读原文]</a>
